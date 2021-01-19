@@ -4,7 +4,7 @@ This is a serial F90 program that will hydrate a crystal by placing one water as
 
 ## Function
 
-This program takes a crystal structure and adds a water as close as possible to an atom of chose in a space that can safely accommodate a H2O, defined by the atom's covalent radius. 
+This program takes a crystal structure and adds a water as far as possible to an atom of chose in a space that can safely accommodate a H2O, defined by the atom's covalent radius. 
 
 ## Input setup
 
@@ -29,11 +29,11 @@ Output will consist of 1 file, an xyz of just the water positions.
 * The fineness of the grid can affected results with small-pore zeolites occasionally producing worse results if the grid is too fine due to small rings being sampled.
 * Complex hydrogen bond networks are not well preserved so this code is not appropriate if the system has low stability dependent on the hydrogen-bonding network.
 * The code will error if a `water.xyz` file is present as the closest reasonable water is written to this file.
-* The code can be compiled with `ifort types.f90 crystal_module.f90 chemistry_methods.f90 voxel_grid.f90 hydrate_system.f90 -o ../bin/hydrate_system`
+* The code can be compiled with `ifort types.f90 crystal_module.f90 chemistry_methods.f90 voxel_grid.f90 maximial_water_separation.f90 -o ../bin/maximial_water_separation`
 
 ## Compiling
 
 GNU:
-`gfortran types.f90 crystal_module.f90 chemistry_methods.f90 voxel_grid.f90 hydrate_system.f90 -o ../bin/hydrate_system.x`
+`gfortran types.f90 crystal_module.f90 chemistry_methods.f90 voxel_grid.f90 maximial_water_separation.f90 -o ../bin/maximial_water_separation.x`
 Intel:
-`ifort types.f90 crystal_module.f90 chemistry_methods.f90 voxel_grid.f90 hydrate_system.f90 -o ../bin/hydrate_system.x`
+`ifort types.f90 crystal_module.f90 chemistry_methods.f90 voxel_grid.f90 maximial_water_separation.f90 -o ../bin/maximial_water_separation.x`
